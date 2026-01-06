@@ -853,3 +853,86 @@ footer a:hover {
     color: var(--color-accent-pink);
     opacity: 0.7;
 }
+
+/* =========================================
+   SCI-FI LOADER STYLES
+   ========================================= */
+#loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: opacity 0.5s ease-out;
+}
+
+#loader.loaded {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.loader-content {
+    width: 300px;
+    text-align: center;
+}
+
+.sys-text {
+    font-family: 'Orbitron', monospace;
+    font-size: 1.5rem;
+    color: var(--color-accent-blue);
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    animation: blink 0.5s infinite;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 4px;
+    background: #222;
+    margin-bottom: 15px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #333;
+}
+
+.progress-fill {
+    width: 0%;
+    height: 100%;
+    background: var(--color-accent-pink);
+    box-shadow: 0 0 10px var(--color-accent-pink);
+    animation: loadProgress 2s ease-in-out forwards;
+}
+
+.loading-text {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+@keyframes loadProgress {
+    0% {
+        width: 0%;
+    }
+
+    20% {
+        width: 10%;
+    }
+
+    40% {
+        width: 45%;
+    }
+
+    70% {
+        width: 70%;
+    }
+
+    100% {
+        width: 100%;
+    }
+}

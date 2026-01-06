@@ -131,4 +131,18 @@ document.addEventListener('DOMContentLoaded', () => {
         const fx = new ScrambleText(el);
         fx.setText(el.innerText);
     });
+    // Sci-Fi Loader Sequence
+    const loader = document.getElementById('loader');
+    if (loader) {
+        // Run text scramble on loader text
+        const loaderText = loader.querySelector('.loading-text');
+        if (loaderText) {
+            const fx = new ScrambleText(loaderText);
+            fx.setText('INITIALIZING_CORE_SYSTEMS...');
+        }
+
+        setTimeout(() => {
+            loader.classList.add('loaded');
+        }, 2500); // 2.5s simulated load time
+    }
 });
