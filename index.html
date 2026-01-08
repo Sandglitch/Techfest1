@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TECHFEST 2025 | Premium Gaming Edition</title>
+    <title>BODHI 2026 | Premium Gaming Edition</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -40,7 +40,7 @@
             <div class="nav-links">
                 <a href="about.html">ABOUT</a>
                 <a href="#schedule">SCHEDULE</a>
-                <a href="#events" class="btn btn-primary" style="padding: 8px 20px; font-size: 0.8rem;">EVENTS</a>
+                <a href="events.html" class="btn btn-primary" style="padding: 8px 20px; font-size: 0.8rem;">EVENTS</a>
             </div>
         </div>
     </nav>
@@ -54,12 +54,11 @@
                 </h1>
                 <p class="reveal"
                     style="font-size: 1.2rem; max-width: 500px; color: var(--color-text-light); margin-bottom: 40px;">
-                    The region's premier technology festival. Competitive gaming, coding battles, and innovation
-                    showcases.
+                    The region's premier technology and engineering festival. Competitive gaming, engineering
+                    challenges, and innovation showcases.
                 </p>
                 <div class="reveal hero-btns">
                     <a href="#events" class="btn">Explore Zones</a>
-                    <a href="https://discord.gg" target="_blank" class="btn btn-white">Join Discord</a>
                 </div>
             </div>
 
@@ -78,33 +77,56 @@
 
     <section id="about" style="padding: 100px 0;">
         <div class="container">
-            <div class="about-grid">
-                <div class="reveal">
-                    <h2 class="section-title" style="text-align: left; margin-bottom: 30px;">PRESS START</h2>
-                    <p style="margin-bottom: 20px; font-size: 1.1rem;">
-                        Techfest 2025 is designed for the players, the builders, and the dreamers.
-                        Inspired by the aesthetics of high-end gaming hardware and futuristic labs,
-                        we bring you an experience that feels crisp, fast, and premium.
-                    </p>
-                    <div style="display: flex; gap: 40px; margin-top: 40px;">
-                        <div>
-                            <div class="stat-num color-pink">50+</div>
-                            <div style="font-weight: 600;">Events</div>
+            <h2 class="section-title reveal" style="margin-bottom: 60px;">FEATURED EVENTS</h2>
+            
+            <div class="event-slider-container reveal">
+                <div class="event-slider">
+                    <div class="event-slide" data-event="1">
+                        <img src="https://via.placeholder.com/600x400/7b2cbf/e0aaff?text=Workshop+on+Python" alt="Workshop on Python" class="slider-image">
+                        <div class="slide-overlay">
+                            <h3>Workshop on Python</h3>
+                            <p>Click to view details</p>
                         </div>
-                        <div>
-                            <div class="stat-num color-blue">10K</div>
-                            <div style="font-weight: 600;">Participants</div>
+                    </div>
+                    <div class="event-slide" data-event="2">
+                        <img src="https://via.placeholder.com/600x400/e0aaff/7b2cbf?text=Robowar+Robot+Buildathon" alt="Robowar: Robot Buildathon" class="slider-image">
+                        <div class="slide-overlay">
+                            <h3>Robowar: Robot Buildathon</h3>
+                            <p>Click to view details</p>
+                        </div>
+                    </div>
+                    <div class="event-slide" data-event="3">
+                        <img src="https://via.placeholder.com/600x400/7b2cbf/e0aaff?text=Debug+Derby" alt="Debug Derby" class="slider-image">
+                        <div class="slide-overlay">
+                            <h3>Debug Derby</h3>
+                            <p>Click to view details</p>
+                        </div>
+                    </div>
+                    <div class="event-slide" data-event="4">
+                        <img src="https://via.placeholder.com/600x400/e0aaff/7b2cbf?text=Hackathon+2026" alt="Hackathon 2026" class="slider-image">
+                        <div class="slide-overlay">
+                            <h3>Hackathon 2026</h3>
+                            <p>Click to view details</p>
+                        </div>
+                    </div>
+                    <div class="event-slide" data-event="5">
+                        <img src="https://via.placeholder.com/600x400/7b2cbf/e0aaff?text=Gaming+Arena" alt="Gaming Arena" class="slider-image">
+                        <div class="slide-overlay">
+                            <h3>Gaming Arena</h3>
+                            <p>Click to view details</p>
                         </div>
                     </div>
                 </div>
-                <div class="reveal about-visual"
-                    style="height: 400px; background: #f2f2f2; border: 4px solid black; position: relative;">
-                    <div
-                        style="position: absolute; top: 10px; left: 10px; right: 10px; bottom: 10px; border: 2px dashed #ccc;">
-                    </div>
-                    <div
-                        style="position: absolute; bottom: 20px; right: 20px; font-family: 'Orbitron'; font-size: 4rem; opacity: 0.1;">
-                        01</div>
+
+                <button class="slider-nav prev" id="slider-prev">❮</button>
+                <button class="slider-nav next" id="slider-next">❯</button>
+
+                <div class="slider-dots">
+                    <span class="dot" data-index="0"></span>
+                    <span class="dot" data-index="1"></span>
+                    <span class="dot" data-index="2"></span>
+                    <span class="dot" data-index="3"></span>
+                    <span class="dot" data-index="4"></span>
                 </div>
             </div>
         </div>
@@ -113,34 +135,34 @@
     <section id="events"
         style="padding: 100px 0; background: #f9f9f9; border-top: 2px solid black; border-bottom: 2px solid black;">
         <div class="container">
-            <h2 class="section-title reveal">BATTLE ZONES</h2>
+            <h2 class="section-title reveal" style="padding:20px">EVENTS</h2>
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
                 <div class="reveal"
                     style="background: white; border: 3px solid black; padding: 30px; transition: transform 0.3s; cursor: pointer;">
                     <div
-                        style="background: var(--color-accent-blue); width: 50px; height: 50px; margin-bottom: 20px; clip-path: polygon(0 0, 100% 0, 100% 70%, 70% 100%, 0 100%);">
+                        style="background: var(--color-accent-pink); width: 50px; height: 50px; margin-bottom: 20px; clip-path: polygon(0 0, 100% 0, 100% 70%, 70% 100%, 0 100%);">
                     </div>
-                    <h3 style="font-size: 1.5rem; margin-bottom: 10px;">CODING</h3>
-                    <p style="color: #666; margin-bottom: 20px;">Competitive programming, Hackathons, and CTFs.</p>
-                    <a href="#" style="font-weight: 700; color: var(--color-accent-blue);">VIEW DETAILS -></a>
+                    <h3 style="font-size: 1.5rem; margin-bottom: 10px;">ENGINEERING</h3>
+                    <p style="color: #666; margin-bottom: 20px;">Design sprints, prototyping, hardware challenges, and coding competitions.</p>
+                    <a href="#" style="font-weight: 700; color: var(--color-accent-pink);">VIEW DETAILS -></a>
                 </div>
                 <div class="reveal"
                     style="background: white; border: 3px solid black; padding: 30px; transition: transform 0.3s; cursor: pointer;">
                     <div
                         style="background: var(--color-accent-pink); width: 50px; height: 50px; margin-bottom: 20px; clip-path: polygon(0 0, 100% 0, 100% 70%, 70% 100%, 0 100%);">
                     </div>
-                    <h3 style="font-size: 1.5rem; margin-bottom: 10px;">ROBOTICS</h3>
-                    <p style="color: #666; margin-bottom: 20px;">RoboWars, Maze Solvers, and Drone Racing.</p>
+                    <h3 style="font-size: 1.5rem; margin-bottom: 10px;">WORKSHOPS</h3>
+                    <p style="color: #666; margin-bottom: 20px;">Learn Robotics, Coding, Drones, </p>
                     <a href="#" style="font-weight: 700; color: var(--color-accent-pink);">VIEW DETAILS -></a>
                 </div>
                 <div class="reveal"
                     style="background: white; border: 3px solid black; padding: 30px; transition: transform 0.3s; cursor: pointer;">
                     <div
-                        style="background: black; width: 50px; height: 50px; margin-bottom: 20px; clip-path: polygon(0 0, 100% 0, 100% 70%, 70% 100%, 0 100%);">
+                        style="background: var(--color-accent-pink); width: 50px; height: 50px; margin-bottom: 20px; clip-path: polygon(0 0, 100% 0, 100% 70%, 70% 100%, 0 100%);">
                     </div>
-                    <h3 style="font-size: 1.5rem; margin-bottom: 10px;">GAMING</h3>
-                    <p style="color: #666; margin-bottom: 20px;">Valorant, FIFA, and CS2 Tournaments.</p>
-                    <a href="#" style="font-weight: 700; color: black;">VIEW DETAILS -></a>
+                    <h3 style="font-size: 1.5rem; margin-bottom: 10px;">GAMES</h3>
+                    <p style="color: #666; margin-bottom: 20px;">Gaming Contests, Treasure Hunts, Battle Royales</p>
+                    <a href="#" style="font-weight: 700; color:var(--color-accent-pink) ;">VIEW DETAILS -></a>
                 </div>
             </div>
         </div>
@@ -169,7 +191,7 @@
             </div>
             <div
                 style="text-align: center; margin-top: 60px; padding-top: 20px; border-top: 1px solid #333; font-size: 0.8rem; opacity: 0.5;">
-                &copy; 2025 Techfest. Designed with pure code.
+                &copy; 2026 Techfest. Designed with loads of caffeine.
             </div>
         </div>
     </footer>

@@ -25,7 +25,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    cursor: url('data:image/svg+xml;utf8,<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L2 22L12 18L22 22L12 2Z" fill="%23e0aaff"/></svg>'), auto;
+    cursor: url('data:image/svg+xml;utf8,<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g transform="rotate(-30 12 12)"><path d="M12 2L2 22L12 18L22 22L12 2Z" fill="%23e0aaff"/></g></svg>'), auto;
 }
 
 html {
@@ -934,5 +934,297 @@ footer a:hover {
 
     100% {
         width: 100%;
+    }
+}
+
+/* =========================================
+   EVENT SLIDER STYLES
+   ========================================= */
+
+.event-slider-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 60px;
+}
+
+.event-slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+}
+
+.event-slide {
+    min-width: 100%;
+    position: relative;
+    height: 500px;
+    overflow: hidden;
+    border: var(--border-thick);
+    box-shadow: var(--shadow-hard);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.event-slide:hover {
+    transform: scale(0.98);
+}
+
+.slider-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: filter 0.3s ease;
+}
+
+.event-slide:hover .slider-image {
+    filter: brightness(0.8) saturate(1.3);
+}
+
+.slide-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(10, 10, 10, 0.95), transparent);
+    padding: 40px;
+    color: white;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.event-slide:hover .slide-overlay {
+    opacity: 1;
+}
+
+.slide-overlay h3 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: var(--color-accent-pink);
+    text-shadow: 2px 2px 0 var(--color-accent-blue);
+}
+
+.slide-overlay p {
+    font-size: 1rem;
+    opacity: 0.8;
+}
+
+.slider-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--color-accent-blue);
+    color: white;
+    border: 2px solid var(--color-accent-pink);
+    padding: 15px 20px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+.slider-nav:hover {
+    background: var(--color-accent-pink);
+    color: black;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.slider-nav.prev {
+    left: 20px;
+}
+
+.slider-nav.next {
+    right: 20px;
+}
+
+.slider-dots {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #333;
+    border: 2px solid var(--color-accent-pink);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dot.active {
+    background: var(--color-accent-pink);
+    box-shadow: 0 0 10px var(--color-accent-pink);
+    transform: scale(1.2);
+}
+
+.dot:hover {
+    background: var(--color-accent-blue);
+    border-color: var(--color-accent-blue);
+}
+
+/* =========================================
+   EVENTS PAGE STYLES
+   ========================================= */
+
+#events-page {
+    background: var(--color-bg);
+}
+
+.events-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 50px;
+    margin-top: 50px;
+}
+
+.event-card {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 30px;
+    background: #0f0f0f;
+    border: var(--border-thick);
+    overflow: hidden;
+    box-shadow: var(--shadow-hard);
+    transition: all 0.3s ease;
+}
+
+.event-card:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: 8px 8px 0px var(--color-accent-pink);
+    background: #1a1a1a;
+}
+
+.event-card-image {
+    width: 100%;
+    height: 100%;
+    min-height: 350px;
+    overflow: hidden;
+    position: relative;
+}
+
+.event-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.event-card:hover .event-card-image img {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+}
+
+.event-card-content {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.event-card-content h3 {
+    font-size: 2.2rem;
+    color: var(--color-accent-pink);
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 0 var(--color-accent-blue);
+}
+
+.event-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    color: var(--color-text-light);
+}
+
+.event-date,
+.event-time {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.event-description {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #999;
+    margin-bottom: 30px;
+}
+
+.event-btn {
+    display: inline-block;
+    width: fit-content;
+    background: var(--color-accent-blue);
+    color: white;
+    padding: 12px 30px;
+    border: 2px solid var(--color-accent-pink);
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 3px 3px 0px var(--color-accent-pink);
+}
+
+.event-btn:hover {
+    background: var(--color-accent-pink);
+    color: black;
+    box-shadow: 1px 1px 0px var(--color-accent-pink);
+    transform: translate(2px, 2px);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .event-card {
+        grid-template-columns: 1fr;
+    }
+
+    .event-card-image {
+        min-height: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    .event-slide {
+        height: 350px;
+    }
+
+    .slide-overlay {
+        padding: 20px;
+    }
+
+    .slide-overlay h3 {
+        font-size: 1.5rem;
+    }
+
+    .slider-nav {
+        padding: 10px 15px;
+        font-size: 1.2rem;
+    }
+
+    .slider-nav.prev {
+        left: 10px;
+    }
+
+    .slider-nav.next {
+        right: 10px;
+    }
+
+    .event-card-content {
+        padding: 20px;
+    }
+
+    .event-card-content h3 {
+        font-size: 1.6rem;
+    }
+
+    .event-meta {
+        font-size: 0.9rem;
+    }
+
+    .event-description {
+        font-size: 0.95rem;
     }
 }

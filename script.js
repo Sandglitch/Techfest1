@@ -131,6 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const fx = new ScrambleText(el);
         fx.setText(el.innerText);
     });
+
     // Sci-Fi Loader Sequence
     const loader = document.getElementById('loader');
     if (loader) {
@@ -144,5 +145,75 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => {
             loader.classList.add('loaded');
         }, 2500); // 2.5s simulated load time
+    }
+
+    // Event Slider Functionality
+    const sliderContainer = document.querySelector('.event-slider-container');
+    if (sliderContainer) {
+        const slider = document.querySelector('.event-slider');
+        const slides = document.querySelectorAll('.event-slide');
+        const prevBtn = document.getElementById('slider-prev');
+        const nextBtn = document.getElementById('slider-next');
+        const dots = document.querySelectorAll('.slider-dots .dot');
+        
+        let currentSlide = 0;
+        const totalSlides = slides.length;
+        let autoSlideInterval;
+
+        function updateSlider() {
+            slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+            
+            // Update dots
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentSlide);
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateSlider();
+            resetAutoSlide();
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            updateSlider();
+            resetAutoSlide();
+        }
+
+        function goToSlide(index) {
+            currentSlide = index;
+            updateSlider();
+            resetAutoSlide();
+        }
+
+        function startAutoSlide() {
+            autoSlideInterval = setInterval(nextSlide, 5000); // Auto-slide every 5 seconds
+        }
+
+        function resetAutoSlide() {
+            clearInterval(autoSlideInterval);
+            startAutoSlide();
+        }
+
+        // Event listeners
+        if (prevBtn) prevBtn.addEventListener('click', prevSlide);
+        if (nextBtn) nextBtn.addEventListener('click', nextSlide);
+
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => goToSlide(index));
+        });
+
+        // Click slides to navigate to events page
+        slides.forEach(slide => {
+            slide.style.cursor = 'pointer';
+            slide.addEventListener('click', () => {
+                window.location.href = 'events.html';
+            });
+        });
+
+        // Initialize
+        updateSlider();
+        startAutoSlide();
     }
 });
